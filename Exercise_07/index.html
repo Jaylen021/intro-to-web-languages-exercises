@@ -1,0 +1,40 @@
+<!--By: Jaylen Pryor-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="txt-price" placeholder="Enter the price of the item"> <!--Adds a text box users can type in the price of an item-->
+<input type="text" id="txt-quantity" placeholder="Enter the quanity of the item"> <!--Adds another text box for the user to include the number quantity-->
+<button id="btn-submit">Calculate</button> <!--Makes a button called calculate for the user to click on after they entered the above items-->
+<div id="output"></div>
+
+
+<script>
+  var priceInput = document.getElementById('txt-price');
+  var quantityInput = document.getElementById('txt-quantity');
+  var submitBtn = document.getElementById('btn-submit');
+  var output = document.getElementById('output');
+
+  submitBtn.addEventListener('click', function () { //This function is used to calculate the user total based on there inputs in the text boxes made above
+    var price = priceInput.value; //Creates a variable called price that holds the price input in the price text box
+    var quanity = quantityInput.value; // Creates a varaible called quantity that holds the number of inputs in the quality text box
+    price = +price; //price is added to current price
+    quanity = +quanity; //quality is added to current quality
+    if (Number.isNaN(price) || Number.isNaN(quanity)) {//if statement that see if the price number or quantity is not a number
+      output.innerHTML = 'Invalid input'; //if either is not a number outputs "Invalid input".
+      return;
+    }
+    var totalPrice = price * quanity; //Variable is created to hold the total price
+    totalPrice = Math.round(totalPrice * 100) / 100; //rounds the total price
+    output.innerHTML = quanity + ' items at $' + price + ' each is $' + totalPrice; //Outputs typed statement after the calculate button has been clicked
+  });
+
+  
+</script>
+</body>
+</html>

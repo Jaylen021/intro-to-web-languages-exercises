@@ -1,0 +1,15 @@
+body {
+    color:orange;
+    background-color: black;
+}
+
+#main-title {
+    color: crimson;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content {
+    margin-bottom: 12px;
+}
